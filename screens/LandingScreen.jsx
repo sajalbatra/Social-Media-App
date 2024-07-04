@@ -8,8 +8,8 @@ import Swiper from 'react-native-swiper';
 
 import { AntDesign } from '@expo/vector-icons';
 
-export class LandingScreen extends Component {
-    render() {
+const LandingScreen=({navigation})=> {
+
         return (
             <View className="flex-col items-center justify-center bg-white">
                 <Animatable.View animation="fadeIn" className="mt-10">
@@ -31,14 +31,14 @@ export class LandingScreen extends Component {
                 </Animatable.View>
                 <Animatable.View animation="bounceIn" delay={1000} className="w-2/3 mt-8">
                 <TouchableOpacity className="py-1.5 bg-purple-400 rounded-full flex-col  items-center space-x-4">
-                    <Text className="text-2xl text-center">Get started now!
+                    <Text className="text-2xl text-center" onPress={() => navigation.navigate('Signup')}
+                    >Get started now!
                     </Text>
                     <AntDesign name="rightcircleo" size={24} color="black"   />
                  </TouchableOpacity>
                 </Animatable.View>
             </View>
         );
-    }
 }
 
 export default LandingScreen;
