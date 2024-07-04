@@ -11,7 +11,8 @@ export const SignupScreen =({navigation})=> {
     const handleSignup = () => {
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-          Alert.alert("Success", "User registered successfully!");
+        //   Alert.alert("Success", "User registered successfully!");
+          navigation.navigate('Home')
         })
         .catch((error) => {
           Alert.alert("Error", error.message);

@@ -4,14 +4,15 @@ import { AntDesign } from '@expo/vector-icons';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../firebaseConfig';
 
-export const LoginScreen=()=>  {
+export const LoginScreen=({navigation})=>  {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
   
     const handleSignup = () => {
         signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-          Alert.alert("Success", "User Login successfull!");
+        //   Alert.alert("Success", "User Login successfull!");
+        navigation.navigate('Home')
         })
         .catch((error) => {
           Alert.alert("Error", error.message);
